@@ -4,7 +4,9 @@ import { useState } from "react";
 
 //Project files
 import CategoryList from "../componentsAdmin/CategoryList";
+import InputCategory from "../componentsAdmin/InputCategory";
 import { fireStore } from "../../scripts/firebase";
+import inputSetup from "../../data/inputSetup.json";
 
 export default function Admin({ menuState }) {
   //Local state
@@ -33,32 +35,18 @@ export default function Admin({ menuState }) {
   return (
     <div>
       <form onSubmit={onCreate}>
-        <h4>Add category</h4>
-        <label>
-          Category name
-          <input
-            type="text"
-            value={category}
-            onChange={(event) => setCategory(event.target.value)}
-          />
-        </label>
-        <h4>Add description</h4>
-        <label>
-          category description
-          <input
-            type="text"
-            value={descriptionLng}
-            onChange={(event) => setDescriptionLng(event.target.value)}
-          />
-        </label>
-        <label>
-          image link
-          <input
-            type="text"
-            value={imageURL}
-            onChange={(event) => setImageURL(event.target.value)}
-          />
-        </label>
+        <InputCategory
+          state={[category, setCategory]}
+          setup={inputSetup.category}
+        />
+        <InputCategory
+          state={[descriptionLng, setDescriptionLng]}
+          setup={inputSetup.descriptionLng}
+        />
+        <InputCategory
+          state={[imageURL, setImageURL]}
+          setup={inputSetup.imageURL}
+        />
         <button onClick={onCreate}>submit</button>
       </form>
       <CategoryList menu={menu} />
