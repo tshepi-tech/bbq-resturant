@@ -1,3 +1,12 @@
-export default function Menu() {
-  return <div>Menu</div>;
+//Project files
+import MenuList from "../components/MenuList";
+
+export default function Menu({ menuState }) {
+  const [menu, setMenu] = menuState;
+
+  return (
+    <div>
+      <MenuList menu={menu} />
+    </div>
+  );
 }

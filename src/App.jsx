@@ -30,7 +30,7 @@ export default function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/menu" element={<Menu menuState={[menu, setMenu]} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Admin menuState={[menu, setMenu]} />} />
       </Routes>
