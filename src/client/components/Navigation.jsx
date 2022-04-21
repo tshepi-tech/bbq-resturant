@@ -8,9 +8,9 @@ export default function Navigation() {
         <h4>Sizzle-BBQ</h4>
       </Link>
       <ul>
-        <NavLink to="menu">Menu </NavLink>
+        <NavLink to="category/Menu">Menu </NavLink>
         <NavLink to="contact">Contact </NavLink>
-        <NavLink to="admin">Admin</NavLink>
+        <NavLink to="Admin">Admin</NavLink>
       </ul>
     </nav>
   );
