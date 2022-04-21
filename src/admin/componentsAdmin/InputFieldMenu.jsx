@@ -7,6 +7,7 @@ export default function InputFieldMenu({
   descriptionState,
   imageState,
   altState,
+  onCreate,
 }) {
   const [title, setTitle] = titleState;
   const [description, setDescription] = descriptionState;
@@ -15,7 +16,7 @@ export default function InputFieldMenu({
 
   return (
     <div>
-      <form>
+      <form onSubmit={onCreate}>
         <InputCategory state={[title, setTitle]} setup={inputSetup.title} />
         <InputCategory
           state={[description, setDescription]}
@@ -29,8 +30,7 @@ export default function InputFieldMenu({
           state={[imageAlt, setImageAlt]}
           setup={inputSetup.imageAlt}
         />
-        {/* // <button onClick={onCreate}>submit</button> 
-        onSubmit={onCreate}*/}
+        <button onClick={onCreate}>submit</button>
       </form>
     </div>
   );
