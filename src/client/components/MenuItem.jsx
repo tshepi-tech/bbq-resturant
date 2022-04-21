@@ -1,8 +1,6 @@
 export default function MenuItem({ item }) {
   const { imageAlt, id, title, description, imageURL } = item;
 
-  //Methods
-
   return (
     <div>
       <li>

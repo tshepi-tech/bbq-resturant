@@ -8,7 +8,3 @@ export default function CategoryList({ menu }) {
   ));
   return <div>{categories}</div>;
 }
-
-{
-  /*onDelete={onDelete}*/
-}
