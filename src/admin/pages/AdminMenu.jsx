@@ -16,14 +16,10 @@ export default function AdminMenu() {
   const [document, setDocument] = useState({});
   const [menu, setMenu] = useState([]);
 
-  const [title, setTitle] = useState("seafood");
-  const [description, setDescription] = useState("the water's finest");
-  const [imageURL, setImageURL] = useState(
-    "https://static.onecms.io/wp-content/uploads/sites/19/2012/06/11/snapper-zucchini-tomato-ck-x.jpg"
-  );
-  const [imageAlt, setImageAlt] = useState(
-    "a picture of fried hake on a plate"
-  );
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [imageURL, setImageURL] = useState("");
+  const [imageAlt, setImageAlt] = useState("");
 
   // Methods
   useEffect(() => {
