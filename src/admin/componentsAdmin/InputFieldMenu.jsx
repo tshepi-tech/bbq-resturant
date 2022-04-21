@@ -1,7 +1,21 @@
-export default function InputFieldMenu() {
+//Project files
+import InputCategory from "./InputCategory";
+import inputSetup from "../../data/inputSetup.json";
+
+export default function InputFieldMenu({
+  titleState,
+  descriptionState,
+  imageState,
+  altState,
+}) {
+  const [title, setTitle] = titleState;
+  const [description, setDescription] = descriptionState;
+  const [imageURL, setImageURL] = imageState;
+  const [imageAlt, setImageAlt] = altState;
+
   return (
     <div>
-      <form onSubmit={onCreate}>
+      <form>
         <InputCategory state={[title, setTitle]} setup={inputSetup.title} />
         <InputCategory
           state={[description, setDescription]}
@@ -15,7 +29,8 @@ export default function InputFieldMenu() {
           state={[imageAlt, setImageAlt]}
           setup={inputSetup.imageAlt}
         />
-        <button onClick={onCreate}>submit</button>
+        {/* // <button onClick={onCreate}>submit</button> 
+        onSubmit={onCreate}*/}
       </form>
     </div>
   );

@@ -46,8 +46,13 @@ export default function AdminMenu() {
   return (
     <div>
       <h2>Admin panel for changing categories</h2>
+      <InputFieldMenu
+        titleState={[title, setTitle]}
+        descriptionState={[description, setDescription]}
+        imageState={[imageURL, setImageURL]}
+        altState={[imageAlt, setImageAlt]}
+      />
       <CategoryList menu={menu} />
-      <InputFieldMenu />
     </div>
   );
 }
