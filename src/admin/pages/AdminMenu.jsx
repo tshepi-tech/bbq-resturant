@@ -26,7 +26,7 @@ export default function AdminMenu() {
 
   return (
     <div>
-      <h1>Menu page hardcoded</h1>
+      <h2>Admin panel for changing categories</h2>
       <CategoryList menu={menu} />
     </div>
   );
