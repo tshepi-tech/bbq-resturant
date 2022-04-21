@@ -1,4 +1,4 @@
-//NPM packages
+/*//NPM packages
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 
@@ -52,4 +52,4 @@ export default function Admin({ menuState }) {
       <CategoryList menu={menu} />
     </div>
   );
-}
+}*/
