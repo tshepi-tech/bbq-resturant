@@ -50,6 +50,14 @@ export default function AdminMenu() {
       newCategory
     );
     setMenu([...menu, newCategory]);
+    resetForm();
+  }
+
+  function resetForm() {
+    setTitle("");
+    setDescription("");
+    setImageURL("");
+    setImageAlt("");
   }
   async function onDelete(id) {
     await deleteDocument("Restaurant/Menu/Content", id);
