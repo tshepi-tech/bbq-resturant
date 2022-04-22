@@ -1,4 +1,4 @@
-export default function CategoryItem({ item }) {
+export default function CategoryItem({ item, onDelete }) {
   const { imageAlt, id, title, description, imageURL } = item;
 
   return (
@@ -8,7 +8,7 @@ export default function CategoryItem({ item }) {
         <p>{title}</p>
         <p>{description}</p>
       </li>
-      <button>Delete</button>
+      <button onClick={() => onDelete(id)}>Delete</button>
       <button>Edit</button>
     </div>
   );

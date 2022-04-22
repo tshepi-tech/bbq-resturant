@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 //Project files
 import CategoryList from "../componentsAdmin/CategoryList";
+import { deleteDocument } from "../../scripts/firestore";
 import { firestore } from "../../scripts/firebase";
 import InputFieldMenu from "../componentsAdmin/InputFieldMenu";
 import { getCollection, getDocument } from "../../scripts/firestore";
@@ -48,9 +49,18 @@ export default function AdminMenu() {
       doc(firestore, "Restaurant/Menu/Content", `${newCategory.title}`),
       newCategory
     );
-    console.log(newCategory);
     setMenu([...menu, newCategory]);
-    console.log(menu);
+  }
+  async function onDelete(id) {
+    await deleteDocument("Restaurant/Menu/Content", id);
+
+    const clonedCategories = [...menu];
+    console.log(clonedCategories);
+    const index = clonedCategories.findIndex((item) => item.id === id);
+
+    clonedCategories.splice(index, 1);
+    console.log(id);
+    setMenu(clonedCategories);
   }
 
   return (
@@ -63,7 +73,7 @@ export default function AdminMenu() {
         altState={[imageAlt, setImageAlt]}
         onCreate={onCreate}
       />
-      <CategoryList menu={menu} />
+      <CategoryList onDelete={onDelete} menu={menu} />
     </div>
   );
 }

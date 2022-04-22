@@ -1,5 +1,11 @@
 //NPM package
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  deleteDoc,
+} from "firebase/firestore";
 
 //Project files
 import { firestore } from "./firebase";
@@ -19,4 +25,12 @@ export async function getCollection(path) {
   });
 
   return documents;
+}
+
+// -- Delete
+export async function deleteDocument(path, id) {
+  const documentPath = doc(firestore, path, id);
+
+  await deleteDoc(documentPath);
+  console.log("Deleted document successfully", id);
 }
