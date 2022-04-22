@@ -8,6 +8,7 @@ import AdminMenu from "./admin/pages/AdminMenu";
 import AdminProducts from "./admin/pages/AdminProducts";
 import Category from "./client/pages/Category";
 import Contact from "./client/pages/Contact";
+import EditMenu from "./admin/componentsAdmin/EditMenu";
 import Home from "./client/pages/Home";
 import Menu from "./client/pages/Menu";
 import Navigation from "./client/components/Navigation";
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="admin/:page/:categoryId" element={<AdminMenu />} />
+        <Route path="/edit" element={<EditMenu />} />
         <Route path="/adminProduct" element={<AdminProducts />} />
       </Routes>
     </div>

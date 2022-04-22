@@ -71,6 +71,12 @@ export default function AdminMenu() {
     setMenu(clonedCategories);
   }
 
+  function editContent(id) {
+    const clonedCategories = [...menu];
+    const itemToEdit = clonedCategories.filter((item) => item.id === id);
+    console.log(itemToEdit);
+  }
+
   return (
     <div>
       <h2>Admin panel for changing categories</h2>
@@ -81,7 +87,7 @@ export default function AdminMenu() {
         altState={[imageAlt, setImageAlt]}
         onCreate={onCreate}
       />
-      <CategoryList onDelete={onDelete} menu={menu} />
+      <CategoryList editContent={editContent} onDelete={onDelete} menu={menu} />
     </div>
   );
 }
