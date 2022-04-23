@@ -15,6 +15,8 @@ export default function ProductItem({ document }) {
     <li key={item.id} item={item} />
   ));
  */
+  console.log(ingredients);
+
   return (
     <div>
       <li>
@@ -23,7 +25,6 @@ export default function ProductItem({ document }) {
         <p>{title}</p>
         <p>{description}</p>
         <p>{price}</p>
-        {ingredientsList}
       </li>
       <button>Back</button>
     </div>

@@ -19,6 +19,7 @@ export default function Menu() {
       const documentData = await getDocument("Restaurant", categoryId);
       const menuData = await getCollection(`Restaurant/${categoryId}/Content/`);
       setDocument(documentData);
+      console.log(documentData);
       setMenu(menuData);
     }
     loadData();
