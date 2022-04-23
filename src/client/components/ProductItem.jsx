@@ -1,4 +1,4 @@
-export default function ProductItem({ item }) {
+export default function ProductItem({ document }) {
   const {
     imageAlt,
     id,
@@ -9,17 +9,23 @@ export default function ProductItem({ item }) {
     heroURL,
     heroAlt,
     ingredients,
-  } = item;
-
+  } = document;
+  /* 
+  const ingredientsList = ingredients.map((item) => (
+    <li key={item.id} item={item} />
+  ));
+ */
   return (
     <div>
       <li>
+        <img src={heroURL} alt={heroAlt} />
         <img src={imageURL} alt={imageAlt} />
         <p>{title}</p>
         <p>{description}</p>
         <p>{price}</p>
+        {ingredientsList}
       </li>
-      <button>View more</button>
+      <button>Back</button>
     </div>
   );
 }
