@@ -1,16 +1,25 @@
 //NPM packages
 import { Link, NavLink } from "react-router-dom";
 
+//Project files
+import sizzleLogo from "../../media/sizzleLogo.png";
+
 export default function Navigation() {
   return (
     <nav>
       <Link to="/">
-        <h4>Sizzle-BBQ</h4>
+        <img className="logo" src={sizzleLogo} alt="Logo of restuarant" />
       </Link>
       <ul>
-        <NavLink to="category/Menu">Menu </NavLink>
-        <NavLink to="contact">Contact </NavLink>
-        <NavLink to="Admin">Admin</NavLink>
+        <NavLink className="NavLink" to="category/Menu">
+          Menu{" "}
+        </NavLink>
+        <NavLink className="NavLink" to="contact">
+          Contact{" "}
+        </NavLink>
+        <NavLink className="NavLink" to="Admin">
+          Admin
+        </NavLink>
       </ul>
     </nav>
   );

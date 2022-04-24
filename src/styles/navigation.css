@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  gap: 1600px;
+}
+.logo {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.NavLink {
+  color: #544541;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-decoration: none;
+}

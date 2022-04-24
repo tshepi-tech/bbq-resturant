@@ -23,13 +23,6 @@ export function RestaurantProvider({ children }) {
   };
 
   //Methods
-  const newCategory = {
-    title: titleCat,
-    description: descriptionCat,
-    imageURL: imageURLCat,
-    imageAlt: imageAltCat,
-    id: titleCat,
-  };
 
   function deleteCategory({ id, menu, setMenu }) {
     const clonedCategories = [...menu];

@@ -13,6 +13,7 @@ import Home from "./client/pages/Home";
 import Menu from "./client/pages/Menu";
 import Navigation from "./client/components/Navigation";
 import Product from "./client/pages/Product";
+import "./styles/styles.css";
 
 export default function App() {
   return (
