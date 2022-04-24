@@ -65,13 +65,6 @@ export default function AdminMenu() {
   async function onDelete(id) {
     await deleteDocument("Restaurant/Menu/Content", id);
     deleteCategory({ id, menu, setMenu });
-
-    /* const clonedCategories = [...menu];
-    console.log(clonedCategories);
-    const index = clonedCategories.findIndex((item) => item.id === id);
-
-    clonedCategories.splice(index, 1);
-    console.log(id);*/
   }
 
   /* function editContent(id) {

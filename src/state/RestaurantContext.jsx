@@ -10,13 +10,11 @@ export function RestaurantProvider({ children }) {
   //Methods
   function deleteCategory({ id, menu, setMenu }) {
     const clonedCategories = [...menu];
-    console.log(menu);
-    console.log(clonedCategories);
     const index = clonedCategories.findIndex((item) => item.id === id);
 
     clonedCategories.splice(index, 1);
+    alert("Category deleted successfully");
     setMenu(clonedCategories);
-    console.log(menu);
   }
 
   return <Context.Provider value={values}>{children}</Context.Provider>;
