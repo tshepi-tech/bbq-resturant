@@ -1,33 +1,37 @@
 //Project files
 import InputCategory from "./InputCategory";
 import inputSetup from "../../data/inputSetup.json";
+import { useRestaurant } from "../../state/RestaurantContext";
 
-export default function InputFieldMenu({
-  titleState,
-  descriptionState,
-  imageState,
-  altState,
-  onCreate,
-}) {
-  const [title, setTitle] = titleState;
-  const [description, setDescription] = descriptionState;
-  const [imageURL, setImageURL] = imageState;
-  const [imageAlt, setImageAlt] = altState;
+export default function InputFieldMenu({ onCreate }) {
+  const {
+    descriptionCat,
+    setDescriptionCat,
+    titleCat,
+    setTitleCat,
+    imageURLCat,
+    setImageURLCat,
+    imageAltCat,
+    setImageAltCat,
+  } = useRestaurant();
 
   return (
     <div>
       <form onSubmit={onCreate}>
-        <InputCategory state={[title, setTitle]} setup={inputSetup.title} />
         <InputCategory
-          state={[description, setDescription]}
+          state={[titleCat, setTitleCat]}
+          setup={inputSetup.title}
+        />
+        <InputCategory
+          state={[descriptionCat, setDescriptionCat]}
           setup={inputSetup.description}
         />
         <InputCategory
-          state={[imageURL, setImageURL]}
+          state={[imageURLCat, setImageURLCat]}
           setup={inputSetup.imageURL}
         />
         <InputCategory
-          state={[imageAlt, setImageAlt]}
+          state={[imageAltCat, setImageAltCat]}
           setup={inputSetup.imageAlt}
         />
         <button onClick={onCreate}>submit</button>

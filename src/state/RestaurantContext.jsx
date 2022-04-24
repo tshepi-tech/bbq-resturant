@@ -4,8 +4,23 @@ import { createContext, useContext, useState } from "react";
 const Context = createContext(null);
 
 export function RestaurantProvider({ children }) {
+  //state
+  const [titleCat, setTitleCat] = useState("");
+  const [descriptionCat, setDescriptionCat] = useState("");
+  const [imageURLCat, setImageURLCat] = useState("");
+  const [imageAltCat, setImageAltCat] = useState("");
   //Properties
-  const values = { deleteCategory };
+  const values = {
+    descriptionCat,
+    setDescriptionCat,
+    titleCat,
+    setTitleCat,
+    deleteCategory,
+    imageURLCat,
+    setImageURLCat,
+    imageAltCat,
+    setImageAltCat,
+  };
 
   //Methods
   function deleteCategory({ id, menu, setMenu }) {

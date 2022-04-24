@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 //Project files
+
 import CategoryList from "../componentsAdmin/CategoryList";
 import { deleteDocument } from "../../scripts/firestore";
 import { firestore } from "../../scripts/firebase";
@@ -13,16 +14,21 @@ import { useRestaurant } from "../../state/RestaurantContext";
 
 export default function AdminMenu() {
   const { categoryId } = useParams();
-  const { deleteCategory } = useRestaurant();
+  const {
+    descriptionCat,
+    setDescriptionCat,
+    titleCat,
+    setTitleCat,
+    deleteCategory,
+    imageURLCat,
+    setImageURLCat,
+    imageAltCat,
+    setImageAltCat,
+  } = useRestaurant();
 
   // Local state
   const [document, setDocument] = useState({});
   const [menu, setMenu] = useState([]);
-
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [imageURL, setImageURL] = useState("");
-  const [imageAlt, setImageAlt] = useState("");
 
   // Methods
   useEffect(() => {
@@ -37,11 +43,11 @@ export default function AdminMenu() {
 
   //Adding items
   const newCategory = {
-    title: title,
-    description: description,
-    imageURL: imageURL,
-    imageAlt: imageAlt,
-    id: title,
+    title: titleCat,
+    description: descriptionCat,
+    imageURL: imageURLCat,
+    imageAlt: imageAltCat,
+    id: titleCat,
   };
 
   async function onCreate(event) {
@@ -56,10 +62,10 @@ export default function AdminMenu() {
   }
 
   function resetForm() {
-    setTitle("");
-    setDescription("");
-    setImageURL("");
-    setImageAlt("");
+    setTitleCat("");
+    setDescriptionCat("");
+    setImageURLCat("");
+    setImageAltCat("");
   }
 
   async function onDelete(id) {
@@ -76,13 +82,7 @@ export default function AdminMenu() {
   return (
     <div>
       <h2>Admin panel for changing categories</h2>
-      <InputFieldMenu
-        titleState={[title, setTitle]}
-        descriptionState={[description, setDescription]}
-        imageState={[imageURL, setImageURL]}
-        altState={[imageAlt, setImageAlt]}
-        onCreate={onCreate}
-      />
+      <InputFieldMenu onCreate={onCreate} />
       <CategoryList onDelete={onDelete} menu={menu} />
     </div>
   );
