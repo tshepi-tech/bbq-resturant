@@ -10,21 +10,16 @@ export default function ProductItem({ document }) {
     heroAlt,
     ingredients,
   } = document;
-  /* 
-  const ingredientsList = ingredients.map((item) => (
-    <li key={item.id} item={item} />
-  ));
- */
-  console.log(ingredients);
 
   return (
     <div>
+      <h1>{title}</h1>
       <li>
         <img src={heroURL} alt={heroAlt} />
         <img src={imageURL} alt={imageAlt} />
-        <p>{title}</p>
         <p>{description}</p>
-        <p>{price}</p>
+        <p>{price} :-</p>
+        <p>Ingredients:{ingredients}</p>
       </li>
       <button>Back</button>
     </div>

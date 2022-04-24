@@ -1,5 +1,6 @@
 //NPM package
 import {
+  addDoc,
   collection,
   getDocs,
   doc,
@@ -11,6 +12,16 @@ import {
 import { firestore } from "./firebase";
 
 // Methods
+
+//--Create
+export async function createDocument(path, data) {
+  const documentPath = collection(firestore, path);
+  const document = await addDoc(documentPath, data);
+
+  return document.id;
+}
+
+//-- Read
 export async function getDocument(path, id) {
   const documentPath = doc(firestore, path, id);
   const document = await getDoc(documentPath);

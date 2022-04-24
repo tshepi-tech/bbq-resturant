@@ -29,7 +29,6 @@ export default function Product() {
 
   return (
     <div>
-      <h1>Product page hardcoded</h1>
       <ProductItem document={document} />
     </div>
   );
