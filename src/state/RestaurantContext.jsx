@@ -4,22 +4,19 @@ import { createContext, useContext, useState } from "react";
 const Context = createContext(null);
 
 export function RestaurantProvider({ children }) {
-  //state
-  const [menu, setMenu] = useState([]);
-
   //Properties
-  const values = { menu, setMenu, deleteCategory };
+  const values = { deleteCategory };
 
   //Methods
-  function deleteCategory(id) {
+  function deleteCategory({ id, menu, setMenu }) {
     const clonedCategories = [...menu];
     console.log(menu);
     console.log(clonedCategories);
     const index = clonedCategories.findIndex((item) => item.id === id);
 
     clonedCategories.splice(index, 1);
-    console.log(id);
     setMenu(clonedCategories);
+    console.log(menu);
   }
 
   return <Context.Provider value={values}>{children}</Context.Provider>;

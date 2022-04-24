@@ -61,24 +61,24 @@ export default function AdminMenu() {
     setImageURL("");
     setImageAlt("");
   }
+
   async function onDelete(id) {
     await deleteDocument("Restaurant/Menu/Content", id);
-    deleteCategory(id);
+    deleteCategory({ id, menu, setMenu });
 
     /* const clonedCategories = [...menu];
     console.log(clonedCategories);
     const index = clonedCategories.findIndex((item) => item.id === id);
 
     clonedCategories.splice(index, 1);
-    console.log(id);
-    setMenu(clonedCategories); */
+    console.log(id);*/
   }
 
-  function editContent(id) {
+  /* function editContent(id) {
     const clonedCategories = [...menu];
     const itemToEdit = clonedCategories.filter((item) => item.id === id);
     console.log(itemToEdit);
-  }
+  } */
 
   return (
     <div>
@@ -90,7 +90,7 @@ export default function AdminMenu() {
         altState={[imageAlt, setImageAlt]}
         onCreate={onCreate}
       />
-      <CategoryList editContent={editContent} onDelete={onDelete} menu={menu} />
+      <CategoryList onDelete={onDelete} menu={menu} />
     </div>
   );
 }
