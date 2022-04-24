@@ -18,7 +18,7 @@ export default function AdminProducts() {
   const [title, setTitle] = useState("hake");
   const [details, setDetails] = useState("crispy baked hake");
   const [description, setDescription] = useState(
-    "the meal is served with eithe fries or salad"
+    "the meal is served with either fries or salad"
   );
   const [ingredients, setIngredients] = useState("fish spice,hake,flour");
   const [price, setPrice] = useState("120");
@@ -51,7 +51,6 @@ export default function AdminProducts() {
     );
     newProduct.id = documentId;
     setProducts([...products, newProduct]);
-    console.log("done");
   }
 
   return (

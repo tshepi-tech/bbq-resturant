@@ -1,8 +1,3 @@
-//NPM packages
-import React from "react";
-
-//Project files
-
 export default function InputCategory({ setup, state }) {
   const { label, required, type } = setup;
   const [setter, getter] = state;

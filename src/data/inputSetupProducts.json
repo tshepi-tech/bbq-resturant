@@ -1,0 +1,52 @@
+{
+  "category": {
+    "label": "Add category of product",
+    "required": true,
+    "type": "text"
+  },
+  "title": {
+    "label": "Add product title",
+    "required": true,
+    "type": "text"
+  },
+  "details": {
+    "label": "Add short details",
+    "required": true,
+    "type": "text"
+  },
+  "description": {
+    "label": "Add description",
+    "required": true,
+    "type": "text"
+  },
+  "ingredients": {
+    "label": "Add product ingredients",
+    "required": true,
+    "type": "text"
+  },
+  "price": {
+    "label": "Add price of product",
+    "required": true,
+    "type": "text"
+  },
+  "imageURL": {
+    "label": "Add image link",
+    "required": true,
+    "type": "text"
+  },
+  "imageAlt": {
+    "label": "Add alternative text for image",
+    "required": true,
+    "type": "text"
+  },
+  "heroURL": {
+    "label": "Add image for banner",
+    "required": false,
+    "type": "text"
+  },
+  "HeroAlt": {
+    "label": "Add alternative text for banner image",
+    "required": false,
+    "type": "text"
+  }
+}
