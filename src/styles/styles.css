@@ -1,4 +1,6 @@
 @import "./typography.css";
 @import "./navigation.css";
 @import "./Home.css";
-@import "./Menu.css"; /* @import "./layout.css"; */
+@import "./Menu.css";
+@import "./Category.css";
+@import "./Product.css"; /* @import "./layout.css"; */

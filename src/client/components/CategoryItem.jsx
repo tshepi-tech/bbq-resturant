@@ -7,16 +7,16 @@ export default function CategoryItem({ item }) {
   const { imageAlt, id, title, details, imageURL, price } = item;
 
   return (
-    <div>
-      <li>
-        <img src={imageURL} alt={imageAlt} />
-        <p>{title}</p>
+    <div className="category_item">
+      <img src={imageURL} alt={imageAlt} />
+      <section className="product_info">
+        <h2>{title}</h2>
         <p>{details}</p>
-        <p>{price}</p>
-      </li>
-      <Link to={`/category/${categoryId}/${subId}/${item.id}`}>
-        <button>View more</button>
-      </Link>
+        <p className="price">{price} :-</p>
+        <Link to={`/category/${categoryId}/${subId}/${item.id}`}>
+          <button>View more</button>
+        </Link>
+      </section>
     </div>
   );
 }

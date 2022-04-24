@@ -22,8 +22,11 @@ export default function Category() {
     loadData();
   }, []);
   return (
-    <div>
-      <h1>{subId}</h1>
+    <div className="category">
+      <div className="category_heading">
+        <h1>{subId}</h1>
+      </div>
+
       <CategoryList products={products} />
     </div>
   );
