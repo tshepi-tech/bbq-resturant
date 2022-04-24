@@ -9,9 +9,11 @@ import { deleteDocument } from "../../scripts/firestore";
 import { firestore } from "../../scripts/firebase";
 import InputFieldMenu from "../componentsAdmin/InputFieldMenu";
 import { getCollection, getDocument } from "../../scripts/firestore";
+import { useRestaurant } from "../../state/RestaurantContext";
 
 export default function AdminMenu() {
   const { categoryId } = useParams();
+  const { deleteCategory } = useRestaurant();
 
   // Local state
   const [document, setDocument] = useState({});
@@ -61,14 +63,15 @@ export default function AdminMenu() {
   }
   async function onDelete(id) {
     await deleteDocument("Restaurant/Menu/Content", id);
+    deleteCategory(id);
 
-    const clonedCategories = [...menu];
+    /* const clonedCategories = [...menu];
     console.log(clonedCategories);
     const index = clonedCategories.findIndex((item) => item.id === id);
 
     clonedCategories.splice(index, 1);
     console.log(id);
-    setMenu(clonedCategories);
+    setMenu(clonedCategories); */
   }
 
   function editContent(id) {

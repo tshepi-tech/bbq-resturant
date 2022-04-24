@@ -8,23 +8,23 @@ export function RestaurantProvider({ children }) {
   const [menu, setMenu] = useState([]);
 
   //Properties
-  const values = { menu, addCategory };
+  const values = { menu, setMenu, deleteCategory };
 
   //Methods
-  function addCategory({ content }) {
-    const { title, description, imageURL, imageAlt, id } = content;
-    const newCategory = {
-      title: title,
-      description: description,
-      imageURL: imageURL,
-      imageAlt: imageAlt,
-      id: title,
-    };
-    setMenu([...menu, newCategory]);
+  function deleteCategory(id) {
+    const clonedCategories = [...menu];
+    console.log(menu);
+    console.log(clonedCategories);
+    const index = clonedCategories.findIndex((item) => item.id === id);
+
+    clonedCategories.splice(index, 1);
+    console.log(id);
+    setMenu(clonedCategories);
   }
 
   return <Context.Provider value={values}>{children}</Context.Provider>;
 }
+
 export function useRestaurant() {
   const context = useContext(Context);
   const errorText =
