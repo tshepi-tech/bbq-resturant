@@ -12,8 +12,8 @@ export default function CategoryItem({ item, onDelete, editContent }) {
       </li>
       <button onClick={() => onDelete(id)}>Delete</button>
 
-      <Link to="/edit">
-        <button onClick={() => editContent(id)}>Edit</button>
+      <Link to={`/edit/${item.id}`}>
+        <button>Edit</button>
       </Link>
     </div>
   );

@@ -29,7 +29,7 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="admin/:page/:categoryId" element={<AdminMenu />} />
-        <Route path="/edit" element={<EditMenu />} />
+        <Route path="/edit/:id" element={<EditMenu />} />
         <Route path="/adminProduct" element={<AdminProducts />} />
       </Routes>
     </div>

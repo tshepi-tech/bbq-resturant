@@ -73,12 +73,6 @@ export default function AdminMenu() {
     deleteCategory({ id, menu, setMenu });
   }
 
-  /* function editContent(id) {
-    const clonedCategories = [...menu];
-    const itemToEdit = clonedCategories.filter((item) => item.id === id);
-    console.log(itemToEdit);
-  } */
-
   return (
     <div>
       <h2>Admin panel for changing categories</h2>
