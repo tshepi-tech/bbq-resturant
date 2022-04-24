@@ -1,7 +1,20 @@
+//Project files
+
 export default function Home() {
   return (
-    <div id="home">
-      <h1>BBQ resturant</h1>
-    </div>
+    <section className="home">
+      <div className="hero">
+        <h1>Home of the best grill</h1>
+      </div>
+      <div className="eat_in">
+        <h2>Eat In</h2>
+      </div>
+      <div className="takeaway">
+        <h2>Take Away</h2>
+      </div>
+      <div className="bar">
+        <h2>Sizzle Bar</h2>
+      </div>
+    </section>
   );
 }

@@ -1,0 +1,47 @@
+.home h2 {
+  color: #f6f3ee;
+  font-size: 28px;
+  background-color: #544541;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/src/media/BBQ\ _hero.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-bottom: 16px;
+}
+.eat_in,
+.takeaway,
+.bar {
+  width: 100vw;
+  height: 60vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-bottom: 16px;
+}
+.eat_in {
+  background-image: url(/src/media/BBQ_eatin.jpg);
+  background-color: #c4a092;
+}
+.takeaway {
+  color: #f6f3ee;
+  background-image: url(/src/media/BBQ_takeaway.jpg);
+  background-color: #a44f30;
+}
+.bar {
+  color: #f6f3ee;
+  background-image: url(/src/media/BBQ_bar.jpg);
+  background-color: #c4a092;
+}
