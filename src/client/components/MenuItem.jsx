@@ -7,15 +7,15 @@ export default function MenuItem({ item }) {
   const { categoryId } = useParams();
 
   return (
-    <div>
-      <li>
-        <img src={imageURL} alt={imageAlt} />
-        <p>{title}</p>
+    <div className="menu_item">
+      <img src={imageURL} alt={imageAlt} />
+      <section className="category_info">
+        <h2>{title}</h2>
         <p>{description}</p>
-      </li>
-      <Link to={`/category/${categoryId}/${item.id}`}>
-        <button>Meals</button>
-      </Link>
+        <Link to={`/category/${categoryId}/${item.id}`}>
+          <button>Meals</button>
+        </Link>
+      </section>
     </div>
   );
 }

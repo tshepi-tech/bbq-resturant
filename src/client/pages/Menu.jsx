@@ -25,8 +25,11 @@ export default function Menu() {
   }, []);
 
   return (
-    <div>
-      <h1>Menu page hardcoded</h1>
+    <div className="menu">
+      <div className="menu_heading">
+        <h1>{categoryId}</h1>
+      </div>
+
       <MenuList menu={menu} />
     </div>
   );
