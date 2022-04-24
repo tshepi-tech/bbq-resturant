@@ -8,13 +8,14 @@ import {
   getDocument,
   createDocument,
 } from "../../scripts/firestore";
+import InputFieldProduct from "../componentsAdmin/InputFieldProduct";
 
 export default function AdminProducts() {
   const { categoryId, subId, productId } = useParams();
 
   const [products, setProducts] = useState([]);
 
-  const [category, setCategoroy] = useState("seafood");
+  /* const [category, setCategoroy] = useState("seafood");
   const [title, setTitle] = useState("hake");
   const [details, setDetails] = useState("crispy baked hake");
   const [description, setDescription] = useState(
@@ -29,7 +30,7 @@ export default function AdminProducts() {
   const [heroURL, setHeroURL] = useState(
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYtUzDiNbPfVhfm3JMyJmv11FBfL2WlHqi5Q&usqp=CAU"
   );
-  const [heroAlt, setHeroAlt] = useState("hake with fries");
+  const [heroAlt, setHeroAlt] = useState("hake with fries"); */
 
   async function onCreate(event) {
     event.preventDefault();
@@ -57,7 +58,7 @@ export default function AdminProducts() {
     <div>
       {" "}
       <h1>Products</h1>
-      <button onClick={onCreate}>Add</button>
+      <InputFieldProduct onCreate={onCreate}>Add</InputFieldProduct>
     </div>
   );
 }

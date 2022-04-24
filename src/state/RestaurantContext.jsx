@@ -9,6 +9,17 @@ export function RestaurantProvider({ children }) {
   const [descriptionCat, setDescriptionCat] = useState("");
   const [imageURLCat, setImageURLCat] = useState("");
   const [imageAltCat, setImageAltCat] = useState("");
+
+  const [category, setCategory] = useState("");
+  const [title, setTitle] = useState("");
+  const [details, setDetails] = useState("");
+  const [description, setDescription] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [price, setPrice] = useState("");
+  const [imageURL, setImageURL] = useState("");
+  const [imageAlt, setImageAlt] = useState("");
+  const [heroURL, setHeroURL] = useState("");
+  const [heroAlt, setHeroAlt] = useState("");
   //Properties
   const values = {
     descriptionCat,
@@ -21,7 +32,29 @@ export function RestaurantProvider({ children }) {
     imageAltCat,
     setImageAltCat,
   };
+  const valuesProduct = {
+    category,
+    setCategory,
+    title,
+    setTitle,
+    details,
+    setDetails,
+    description,
+    setDescription,
 
+    ingredients,
+    setIngredients,
+    price,
+    setPrice,
+    imageURL,
+    setImageURL,
+    imageAlt,
+    setImageAlt,
+    heroURL,
+    setHeroURL,
+    heroAlt,
+    setHeroAlt,
+  };
   //Methods
 
   function deleteCategory({ id, menu, setMenu }) {
@@ -33,7 +66,11 @@ export function RestaurantProvider({ children }) {
     setMenu(clonedCategories);
   }
 
-  return <Context.Provider value={values}>{children}</Context.Provider>;
+  return (
+    <Context.Provider valuesProduct={valuesProduct} value={values}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 export function useRestaurant() {
